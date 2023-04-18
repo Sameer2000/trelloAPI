@@ -39,9 +39,9 @@ const deleteCard = (req, res) => {
 };
 
 const updateCard = (req, res) => {
-  const { name } = req.body;
+  const { name, listId } = req.body;
   try {
-    Card.update({ name }, { where: { id: req.params.id } })
+    Card.update({ name, listId }, { where: { id: req.params.id } })
       .then((data) => {
         res.send("Updated successfully");
       })
